@@ -276,13 +276,13 @@ void LCD_BackLight(unsigned char back); //LCD背关亮度控制 0-7 0关闭 7最亮
 void LCD_Clear(void); //清屏 屏变黑色
 void LCD_Init(void); //初始化 
 void LCD_DrawImage1BPP(unsigned int x, unsigned int y,
-       __psv__ const unsigned char *img,
+       __prog__ const unsigned char *img,
         unsigned char fcolor, unsigned char bcolor); //写图片，8点写，效率高
 void LCD_DrawImage1BPPZOOM_1(unsigned int x, unsigned int y,
-       __psv__ const  unsigned char *img,
+       __prog__ const  unsigned char *img,
         unsigned char fcolor, unsigned char bcolor); //写图片，1点写，效率低
 void LCD_DrawImage1BPPZOOM_4(unsigned int x, unsigned int y,
-       __psv__ const unsigned char *img,
+       __prog__ const unsigned char *img,
         unsigned char fcolor, unsigned char bcolor); //写图片，放大4倍，单点写 
 void LCD_DrawRect(unsigned int x, unsigned int y,//W的值为0时，会溢出
         unsigned int w, unsigned int h, unsigned char color); //画矩形

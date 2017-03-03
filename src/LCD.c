@@ -201,7 +201,7 @@ void LCD_DrawMPoint(unsigned int x, unsigned int y, unsigned int mpoint) {
 
 
 void LCD_DrawImage1BPP(unsigned int x, unsigned int y,
-        __psv__ const unsigned char *img,
+        __prog__ const unsigned char *img,
         unsigned char fcolor, unsigned char bcolor) {
 
     write_cmd(0x06);
@@ -234,7 +234,7 @@ void LCD_DrawImage1BPP(unsigned int x, unsigned int y,
 }
 
 void LCD_DrawImage1BPPZOOM_1(unsigned int x, unsigned int y,
-        __psv__ const unsigned char *img,
+        __prog__ const unsigned char *img,
         unsigned char fcolor, unsigned char bcolor) {
 
     write_cmd(0x06);
@@ -279,7 +279,7 @@ void LCD_DrawImage1BPPZOOM_1(unsigned int x, unsigned int y,
 }
 
 void LCD_DrawImage1BPPZOOM_4(unsigned int x, unsigned int y,
-        __psv__ const unsigned char *img,
+        __prog__ const unsigned char *img,
         unsigned char fcolor, unsigned char bcolor) {
     unsigned int dx;
 
@@ -338,7 +338,7 @@ void LCD_DrawRect(unsigned int x, unsigned int y,
 }
 
 //void LCD_ShowPic(unsigned int x, unsigned char y, unsigned int w, unsigned char h, 
-//        __psv__ const unsigned char *ptr) {
+//        __prog__ const unsigned char *ptr) {
 //    unsigned int j = 0, i = 0;
 //    for (i = 0; i < h; i++) {
 //
