@@ -129,7 +129,7 @@ void LCD_Init(void) {
     LCD_CHS(0x01); //切换到MCU模式 
     __delay_us(50);
 
-    LCD_BackLight(0x07); //亮度最大
+    LCD_BackLight(0x00); //亮度最小
 
     LCD_Clear();
 
