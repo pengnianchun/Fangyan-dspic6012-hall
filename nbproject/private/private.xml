@@ -5,6 +5,14 @@
         <group>
             <file>file:/C:/Users/pnc/Desktop/Pic299Base/src/BSP.h</file>
             <file>file:/C:/Users/pnc/Desktop/Pic299Base/src/LCD.c</file>
+            <file>file:/C:/Users/pnc/Desktop/Huanghai/src/SYSTEM.c</file>
+            <file>file:/C:/Users/pnc/Desktop/Pic299Base/src/SWITCH.c</file>
+            <file>file:/C:/Users/pnc/Desktop/Pic299Base/src/SMSTEP.c</file>
+            <file>file:/C:/Users/pnc/Desktop/Pic299Base/src/TIMER.c</file>
+            <file>file:/C:/Users/pnc/Desktop/Pic299Base/src/INT.c</file>
+            <file>file:/C:/Users/pnc/Desktop/Pic299Base/src/EEROM_asm.s</file>
+            <file>file:/C:/Users/pnc/Desktop/Pic299Base/src/CAN.c</file>
+            <file>file:/C:/Users/pnc/Desktop/Pic299Base/src/I2C.c</file>
         </group>
     </open-files>
 </project-private>

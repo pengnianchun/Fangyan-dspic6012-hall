@@ -70,7 +70,7 @@ void SM_Init(void) {
     T4CONbits.TON=1;
 }
 
-void SM_Update_0(void) {
+void SM_Update_0(void) {//车速表
     if (sm_new_value[0] >= sm_old_value[0]) {
         sm_steps[0] = sm_new_value[0] - sm_old_value[0];
         MD1C = 0; //顺时针移动
@@ -93,7 +93,7 @@ void SM_Update_0(void) {
     else sm_speed[0] = 35; //210ms
 }
 
-void SM_Update_1(void) {
+void SM_Update_1(void) {//电压表
     if (sm_new_value[1] >= sm_old_value[1]) {
         sm_steps[1] = sm_new_value[1] - sm_old_value[1];
         MD2C = 0; //逆时针移动
@@ -116,7 +116,7 @@ void SM_Update_1(void) {
     else sm_speed[1] = 35; //210ms
 }
 
-void SM_Update_2(void) {//转速表
+void SM_Update_2(void) {//机油压力表//气压2
     if (sm_new_value[2] >= sm_old_value[2]) {
         sm_steps[2] = sm_new_value[2] - sm_old_value[2];
         MD3C = 0; //顺时针移动
@@ -124,7 +124,22 @@ void SM_Update_2(void) {//转速表
         sm_steps[2] = sm_old_value[2] - sm_new_value[2];
         MD3C = 1; //逆时针移动
     }
-    if (sm_steps[2] > 480) sm_speed[2] = 5; //最快速度
+    //气压2
+    if (sm_steps[2] > 480) sm_speed[2] = 0; //最快速度
+    else if (sm_steps[2] > 360) sm_speed[2] = 1; //
+    else if (sm_steps[2] > 240) sm_speed[2] = 2; //     
+    else if (sm_steps[2] > 180) sm_speed[2] = 3; //
+    else if (sm_steps[2] > 120) sm_speed[2] = 4; //
+    else if (sm_steps[2] > 80) sm_speed[2] = 5; //
+    else if (sm_steps[2] > 60) sm_speed[2] = 6; //
+    else if (sm_steps[2] > 45) sm_speed[2] = 7; //
+    else if (sm_steps[2] > 30) sm_speed[2] = 8; //120ms
+    else if (sm_steps[2] > 20) sm_speed[2] = 10; //300ms
+    else if (sm_steps[2] > 12) sm_speed[2] = 15; //120ms
+    else if (sm_steps[2] > 6) sm_speed[2] = 25; //150ms
+    else sm_speed[2] = 35; //210ms
+    //机油压力表
+    /*if (sm_steps[2] > 480) sm_speed[2] = 5; //最快速度
     else if (sm_steps[2] > 360) sm_speed[2] = 10; //
     else if (sm_steps[2] > 240) sm_speed[2] = 20; //     
     else if (sm_steps[2] > 180) sm_speed[2] = 30; //
@@ -137,9 +152,10 @@ void SM_Update_2(void) {//转速表
     else if (sm_steps[2] > 12) sm_speed[2] = 100; //120ms
     else if (sm_steps[2] > 6) sm_speed[2] = 110; //150ms
     else sm_speed[2] = 120; //210ms
+    */
 }
 
-void SM_Update_3(void) {//水温表
+void SM_Update_3(void) {//油量表
     if (sm_new_value[3] >= sm_old_value[3]) {
         sm_steps[3] = sm_new_value[3] - sm_old_value[3];
         MD4C = 0; //逆时针移动
@@ -162,7 +178,7 @@ void SM_Update_3(void) {//水温表
     else sm_speed[3] = 120; //210ms
 }
 
-void SM_Update_4(void) {//车速表
+void SM_Update_4(void) {//水温表//气压1
     if (sm_new_value[4] >= sm_old_value[4]) {
         sm_steps[4] = sm_new_value[4] - sm_old_value[4];
         MD5C = 0; //顺时针移动
@@ -170,7 +186,22 @@ void SM_Update_4(void) {//车速表
         sm_steps[4] = sm_old_value[4] - sm_new_value[4];
         MD5C = 1; //逆时针移动
     }
-    if (sm_steps[4] > 480) sm_speed[4] = 5; //最快速度
+    //气压1
+    if (sm_steps[4] > 480) sm_speed[4] = 0; //最快速度
+    else if (sm_steps[4] > 360) sm_speed[4] = 1; //
+    else if (sm_steps[4] > 240) sm_speed[4] = 2; //     
+    else if (sm_steps[4] > 180) sm_speed[4] = 3; //
+    else if (sm_steps[4] > 120) sm_speed[4] = 4; //
+    else if (sm_steps[4] > 80) sm_speed[4] = 5; //
+    else if (sm_steps[4] > 60) sm_speed[4] = 6; //
+    else if (sm_steps[4] > 45) sm_speed[4] = 7; //
+    else if (sm_steps[4] > 30) sm_speed[4] = 8; //120ms
+    else if (sm_steps[4] > 20) sm_speed[4] = 10; //300ms
+    else if (sm_steps[4] > 12) sm_speed[4] = 15; //120ms
+    else if (sm_steps[4] > 6) sm_speed[4] = 25; //150ms
+    else sm_speed[4] = 35; //210ms
+    //水温表
+    /*if (sm_steps[4] > 480) sm_speed[4] = 5; //最快速度
     else if (sm_steps[4] > 360) sm_speed[4] = 10; //
     else if (sm_steps[4] > 240) sm_speed[4] = 20; //     
     else if (sm_steps[4] > 180) sm_speed[4] = 30; //
@@ -183,9 +214,10 @@ void SM_Update_4(void) {//车速表
     else if (sm_steps[4] > 12) sm_speed[4] = 100; //120ms
     else if (sm_steps[4] > 6) sm_speed[4] = 110; //150ms
     else sm_speed[4] = 120; //210ms
+    */
 }
 
-void SM_Update_5(void) {//电压值 
+void SM_Update_5(void) {//转速表
     if (sm_new_value[5] >= sm_old_value[5]) {
         sm_steps[5] = sm_new_value[5] - sm_old_value[5];
         MD6C = 0; //顺时针移动
