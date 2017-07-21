@@ -187,7 +187,7 @@ void LCD_DrawMPoint(unsigned int x, unsigned int y, unsigned int mpoint) {
      mpoint=mpoint-0xff;  
      write_cmd(0x22);  
      write_data(0xff);
-     __delay_us(10);
+     __delay_us(20);
      x=x+0xff; 
      write_cmd((unsigned char) ((x >> 4) & 0xF0));
      write_data((unsigned char) x);
@@ -196,7 +196,7 @@ void LCD_DrawMPoint(unsigned int x, unsigned int y, unsigned int mpoint) {
      if(mpoint==0) return;
      write_cmd(0x22);   
      write_data(mpoint); 
-     __delay_us(10);
+     __delay_us(20);
 }
 
 
