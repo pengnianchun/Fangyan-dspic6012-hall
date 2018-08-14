@@ -227,7 +227,8 @@ void LCD_DrawImage1BPP(unsigned int x, unsigned int y,
 
         write_cmd(0x12); //8点写方式 
         for (j = 0; j < wb; j++) {
-            write_data(*img++); //写数据     
+            write_data(*img++); //写数据  
+            __delay_us(20);
         }
         y++;
     }
@@ -461,5 +462,58 @@ void LCD_DrawRect(unsigned int x, unsigned int y,
 //}
 //
 
+void LCD_DrawImage1BPP_21x20(unsigned int x, unsigned int y,
+        __prog__ const unsigned char *img,
+        unsigned char fcolor, unsigned char bcolor) {
 
+    write_cmd(0x06);
+    write_data(fcolor); //前景色
 
+    write_cmd(0x07);
+    write_data(bcolor); //背景色   
+
+    unsigned int i, j;
+
+    for (i = 0; i < 20; i++) {
+        write_cmd((unsigned char) ((x >> 4) & 0xF0));
+        write_data((unsigned char) x);
+
+        write_cmd((unsigned char) ((y >> 4) & 0xF0) | 0x01);
+        write_data((unsigned char) y);
+
+        write_cmd(0x12); //8点写方式 
+        for (j = 0; j < 3; j++) {
+            write_data(*img++); //写数据  
+            __delay_us(20);
+        }
+        y++;
+    }
+}
+
+void LCD_DrawImage1BPP_11x20(unsigned int x, unsigned int y,
+        __prog__ const unsigned char *img,
+        unsigned char fcolor, unsigned char bcolor) {
+
+    write_cmd(0x06);
+    write_data(fcolor); //前景色
+
+    write_cmd(0x07);
+    write_data(bcolor); //背景色   
+
+    unsigned int i, j;
+
+    for (i = 0; i < 20; i++) {
+        write_cmd((unsigned char) ((x >> 4) & 0xF0));
+        write_data((unsigned char) x);
+
+        write_cmd((unsigned char) ((y >> 4) & 0xF0) | 0x01);
+        write_data((unsigned char) y);
+
+        write_cmd(0x12); //8点写方式 
+        for (j = 0; j < 2; j++) {
+            write_data(*img++); //写数据  
+            __delay_us(20);
+        }
+        y++;
+    }
+}

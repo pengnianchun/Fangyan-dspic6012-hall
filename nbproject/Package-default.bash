@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Pic299Base.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=Pic299Base.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=Pic299Base/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Pic299Base-V1.00.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=Pic299Base-V1.00.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=Pic299Base-V1.00/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/Pic299Base/lib
+makeDirectory ${TMPDIR}/Pic299Base-V1.00/lib
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}lib/${OUTPUT_BASENAME}" 0644
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/Pic299Base.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/Pic299Base-V1.00.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/Pic299Base.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/Pic299Base-V1.00.tar *
 checkReturnCode
 
 # Cleanup

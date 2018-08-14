@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base/src/SWITCH.c</file>
-            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base/src/SMSTEP.c</file>
-            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base/src/CAN.c</file>
-            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base/src/DS3231.c</file>
-            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base/src/EEROM.c</file>
-            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base/src/I2C.c</file>
-            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base/src/LCD.c</file>
-            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base/src/BSP.h</file>
+            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base-V1.00/src/LCD.c</file>
+            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base-V1.00/src/I2C.c</file>
+            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base-V1.00/src/TIMER.c</file>
+            <file>file:/C:/Users/pnc/Desktop/应用程序/底层/Pic299Base-V1.00/src/DS3231.c</file>
         </group>
     </open-files>
 </project-private>
